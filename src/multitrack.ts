@@ -649,7 +649,7 @@ class MultiTrack extends EventEmitter<MultitrackEvents> {
     if (trackIndex === -1) return;
 
     const ws = this.wavesurfers[trackIndex];
-    const wsRegions = ws.getActivePlugins().find((p) => p instanceof RegionsPlugin) as RegionsPlugin;
+    const wsRegions = ws?.getActivePlugins().find((p) => p instanceof RegionsPlugin) as RegionsPlugin;
 
     if (wsRegions) {
       const regionInstance = wsRegions.addRegion({
@@ -691,7 +691,7 @@ class MultiTrack extends EventEmitter<MultitrackEvents> {
     if (trackIndex === -1) return;
 
     const ws = this.wavesurfers[trackIndex];
-    const wsRegions = ws.getActivePlugins().find((p) => p instanceof RegionsPlugin) as RegionsPlugin;
+    const wsRegions = ws?.getActivePlugins().find((p) => p instanceof RegionsPlugin) as RegionsPlugin;
 
     if (wsRegions) {
       const region = wsRegions.getRegions().find((r) => r.id === regionId);
